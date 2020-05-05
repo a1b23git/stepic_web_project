@@ -4,4 +4,4 @@ sudo rm -rf /etc/nginx/sites-enabled/default
 sudo /etc/init.d/nginx restart
 sudo ln -sf /home/box/web/hello.py /etc/gunicorn.d/hello.py
 sudo /etc/init.d/gunicorn restart
-sudo gunicorn -c hello.py hello:app
+sudo gunicorn -c hello.py hello:app &
