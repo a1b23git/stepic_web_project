@@ -4,11 +4,11 @@ from django.db import models
 from django.contrib.auth.models import User
 
 class QuestionManager(models.Manager):
-    def new():
-        pass
-    def popular():
-        pass
-      
+  def new(self):
+    return self.order_by('-added_at')
+  def popular(self):
+    return self.order_by('-rating')
+  
       
 class Question(models.Model):
     objects = QuestionManager()
